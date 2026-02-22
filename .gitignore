@@ -22,3 +22,9 @@ fnd
 lib/77bit/tmp
 lib/tmp
 lib/ftrsd
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+build/
+build-*/
