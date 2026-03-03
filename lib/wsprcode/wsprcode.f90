@@ -1,3 +1,8 @@
+!------------------------------------------------------------------------------
+! This seems to be the encryption location but Im very unfamiliar with fortran
+!------------------------------------------------------------------------------
+
+
 !-------------------------------------------------------------------------------
 !
 ! This file is part of the WSPR application, Weak Signal Propagation Reporter
