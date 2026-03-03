@@ -1,3 +1,6 @@
+/* I have found the WSPR code decoder but I cant seem to locate the encoder for
+the encryption side. But I believe this is a good spot for decryption potentially*/
+
 /*
  This file is part of program wsprd, a detector/demodulator/decoder
  for the Weak Signal Propagation Reporter (WSPR) mode.
