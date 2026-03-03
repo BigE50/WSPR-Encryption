@@ -1,4 +1,5 @@
 program wsprcode
+! Is there any way to use these to determine what to look for in the code to find our encryption location
 
 ! This program provides examples of the source encoding, convolutional
 ! error-control coding, bit and symbol ordering, and synchronizing
