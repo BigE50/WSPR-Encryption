@@ -1,3 +1,5 @@
+//FOUND WSPRNET CONNECTION
+
 // Interface to WSPRnet website
 //
 // by Edson Pereira - PY2SDR
