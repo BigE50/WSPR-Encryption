@@ -11607,7 +11607,7 @@ void MainWindow::remote_configure (QString const& mode, quint32 frequency_tolera
   tx_watchdog (false);
   QApplication::alert (this);
 }
-
+// Primary Location for WSPR Encryption Located
 QString MainWindow::WSPR_message()
 {
   QString sdBm,msg0,msg1,msg2;

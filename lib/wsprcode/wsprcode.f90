@@ -56,7 +56,7 @@ program wsprcode
 
 ! Metric table for decoding from soft symbols
   integer mettab(0:255,0:1)
-  data mettab/                                            &
+  data mettab/                                             &
          5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   &
          5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   &
          5,   5,   5,   5,   5,   5,   5,   5,   5,   5,   &
