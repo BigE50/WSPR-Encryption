@@ -43,6 +43,12 @@ subroutine extract4(sym0,ncount,decoded)
   call interleave4(symbol(2),-1)          !Remove the interleaving
   call fano232(symbol(2),nbits+31,mettab,ndelta,limit,data1,     &
        ncycles,metric,ncount)
+
+  ! TODO: Add decrypt here (if extract4 is used for WSPR)
+  ! integer(kind=8) :: epoch
+  ! epoch = int((time() / 120.0_8) * 120.0_8, kind=8)
+  ! call decrypt_wspr_payload(data1, epoch)
+
   nlim=ncycles/(nbits+31)
 
 !### Make usage here like that in jt9fano...

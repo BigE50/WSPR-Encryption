@@ -123,6 +123,12 @@ program wsprcode
 
 ! Call the sequential (Fano algorithm) decoder
   call fano232(softsym,nbits,mettab,ndelta,limit,data1,ncycles,metric,nerr)
+
+  ! TODO: Add decrypt here
+  ! integer(kind=8) :: epoch
+  ! epoch = int((time() / 120.0_8) * 120.0_8, kind=8)
+  ! call decrypt_wspr_payload(data1, epoch)
+
   call wqdecode(data1,msg2,ntype1)         
 
   write(*,1020) ntype1

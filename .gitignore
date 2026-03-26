@@ -28,3 +28,6 @@ Makefile
 compile_commands.json
 build/
 build-*/
+cryptopp/libcryptopp.a
+cryptopp/cryptest.exe
+cryptopp/*.o

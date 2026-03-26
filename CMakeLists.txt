@@ -305,6 +305,7 @@ set (wsjt_CXXSRCS
   lib/crc10.cpp
   lib/crc13.cpp
   lib/crc14.cpp
+  crypto_bridge.cpp
   ${wsjt_fox_CXXSRCS}
   )
 # deal with a GCC v6 UB error message
@@ -1157,7 +1158,8 @@ endif ()
 
 # build a library of package functionality (without and optionally with OpenMP support)
 add_library (wsjt_cxx STATIC ${wsjt_CSRCS} ${wsjt_CXXSRCS})
-target_link_libraries (wsjt_cxx ${LIBM_LIBRARIES} Boost::log_setup ${LIBM_LIBRARIES})
+target_include_directories (wsjt_cxx PRIVATE ${CMAKE_SOURCE_DIR}/cryptopp)
+target_link_libraries (wsjt_cxx ${LIBM_LIBRARIES} Boost::log_setup ${LIBM_LIBRARIES} ${CMAKE_SOURCE_DIR}/cryptopp/libcryptopp.a)
 
 # build an OpenMP variant of the Fortran library routines
 add_library (wsjt_fort STATIC ${wsjt_FSRCS})
