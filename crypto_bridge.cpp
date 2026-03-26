@@ -1,6 +1,7 @@
 #include <vector>
 #include <cstdint>
 #include <cstring>
+#include <cstdio>
 
 #include <cryptopp/aes.h>
 #include <cryptopp/modes.h>
@@ -45,10 +46,20 @@ void aes_ctr_crypt(uint8_t* data, size_t len, uint64_t epoch)
 {
     std::vector<uint8_t> iv = derive_iv(epoch);
 
+    // DEBUG: Print before
+    fprintf(stderr, "[ENCRYPT] Before (epoch=%lu): ", epoch);
+    for (size_t i = 0; i < len; i++) fprintf(stderr, "%02X ", data[i]);
+    fprintf(stderr, "\n");
+
     CTR_Mode<AES>::Encryption enc;
     enc.SetKeyWithIV(KEY, sizeof(KEY), iv.data());
 
     enc.ProcessData(data, data, len);
+
+    // DEBUG: Print after
+    fprintf(stderr, "[ENCRYPT] After:             ");
+    for (size_t i = 0; i < len; i++) fprintf(stderr, "%02X ", data[i]);
+    fprintf(stderr, "\n");
 }
 
 // ==== FORTRAN INTERFACE ====

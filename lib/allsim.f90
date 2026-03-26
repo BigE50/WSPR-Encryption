@@ -16,6 +16,7 @@ program allsim
   real wave(NMAX)
   character message*22,msgsent*22,arg*8
   character*37 msg37,msgsent37
+  integer(kind=8) :: epoch
 
   nargs=iargc()
   if(nargs.ne.1 .and. nargs.ne.2) then
@@ -61,7 +62,8 @@ program allsim
   endif
 
   if(isig.eq.0 .or. isig.eq.3) then
-     call genwspr(message,msgsent,itone)
+     epoch = int((time() / 120.0_8) * 120.0_8, kind=8)
+     call genwspr(message,msgsent,itone,epoch)
      call addit(itone,12000,86,8192,800,sig,dat)    !3 WSPR (only 59 s of data)
   endif
 

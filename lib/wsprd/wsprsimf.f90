@@ -16,6 +16,7 @@ program wsprsim
   integer   itone(NN)
   integer*2 iwave(NMAX)
   real*8    fMHz
+  integer(kind=8) :: epoch
 
 ! Get command-line argument(s)
   nargs=iargc()
@@ -52,7 +53,8 @@ program wsprsim
   if(snrdb.gt.90.0) sig=1.0
   txt=NN*NSPS0/12000.0
 
-  call genwspr(msg,msgsent,itone)       !Encode the message, get itone
+  epoch = int((time() / 120.0_8) * 120.0_8, kind=8)
+  call genwspr(msg,msgsent,itone,epoch)       !Encode the message, get itone
 
   write(*,1000) f0,xdt,txt,snrdb,fspread,delay,nfiles,msgsent
 1000 format('f0:',f9.3,'   DT:',f6.2,'   txt:',f6.1,'   SNR:',f6.1,    &
